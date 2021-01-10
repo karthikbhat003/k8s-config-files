@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: test-k8s
+spec: 
+  selector: 
+    matchLabels:
+      app: test-k8s
+      department: basic
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: test-k8s
+        department: basic
+    spec:
+      containers: 
+      - name: test-k8s
+        image: "karthikrbhat003/test-docker"
