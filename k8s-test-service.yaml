@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-k8s-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: test-k8s
+    department: basic
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9110
